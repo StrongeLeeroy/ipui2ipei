@@ -1,9 +1,9 @@
-IPUI 2 IPEI - Modular Version
+IPUI 2 IPEI
 ===========
 ###### by Gorka Hernandez
 
 *IPUI 2 IPEI converts DECT phone IPUI codes to standard IPEI ones, all done in an ETSI compliant process.*
-*This version has it's JS scripts in a separate directory.*
+*Built using a modular design and latest Bootstrap version (v3.2.0)*
 
 ---
 
@@ -13,3 +13,8 @@ IPUI 2 IPEI - Modular Version
   > * Basic functionality has been implemented.
 
   > * Verbose mode.
+
+##### v0.2 "Bootstrapidly Modular!"
+  > * Rebuilt using Bootstrap v3.2.0
+
+  > * JS code has been migrated to an external file.
