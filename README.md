@@ -18,3 +18,8 @@ IPUI 2 IPEI
   > * Rebuilt using Bootstrap v3.2.0
 
   > * JS code has been migrated to an external file.
+
+##### v0.2 "Cleaning up the house"
+  > * Added reset button.
+
+  > * Set IPEI (result) input tag to read only.
