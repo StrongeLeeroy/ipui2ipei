@@ -1,0 +1,19 @@
+body
+{
+	padding: 20px;
+}
+
+form
+{
+	padding: 20px;
+}
+
+div#standard
+{
+	font-family: monospace; font-size: 10px;
+}
+
+footer
+{
+	float: right; text-align: right; font-size: 10px;
+}

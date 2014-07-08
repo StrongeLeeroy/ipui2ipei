@@ -26,3 +26,4 @@ IPUI 2 IPEI
 
 ##### v0.3.0 "Validate NAOW"
   > * Form validation is now live and will let the user know at the moment if the input is correct in a visual way.
+  > * Externalized CSS styles.
