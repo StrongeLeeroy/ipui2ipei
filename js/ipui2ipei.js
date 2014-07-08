@@ -1,12 +1,52 @@
+ipui = document.getElementById('ipui');
+
+function keyPressHandle(e) {
+  	var char = String.fromCharCode(e.charCode), 
+    target = e.target,
+    inputVal = target.value,
+
+    value = inputVal.substr(0, target.selectionStart) + char + inputVal.substr(target.selectionEnd); 
+    ipuiLength = ipui.value.length + 1;
+
+  	if (ipuiLength < 9) {
+  		visualValidation(false, target);
+ 	} else {
+ 		visualValidation(true, target);
+ 	}   
+}
+
+function keyUpHandle(e) {
+  var target = e.target,
+      keyCode = e.keyCode;
+
+  if (keyCode === 8 || keyCode === 46) {
+  	ipuiLength = ipui.value.length;
+    if(ipuiLength < 9) {
+      visualValidation(false, target);
+    } else {
+      visualValidation(true, target);
+    }
+  }
+}
+
+function visualValidation(valid, target) {
+	if (valid === true) {
+		document.getElementById("ipui-group").className = "form-group has-success has-feedback"
+		document.getElementById("ipuiVal").className = "glyphicon form-control-feedback glyphicon-ok"
+	} else {
+		document.getElementById("ipui-group").className = "form-group has-error has-feedback"
+		document.getElementById("ipuiVal").className = "glyphicon form-control-feedback glyphicon-remove"
+	}
+}
+
+ipui.onkeypress = keyPressHandle;
+ipui.onkeyup = keyUpHandle;
+
 function calculate(){
 	ipui = document.getElementById("ipui").value
-	// ipui = ipui.replace(/\s+/g, '')
 
 	if (ipui.length < 9) {
 		alert("ERROR: Debe de haber al menos 9 dígitos hexadecimales.")
-		document.getElementById("ipui-group").className = "form-group has-error has-feedback"
-		document.getElementById("ipuiVal").className = "glyphicon form-control-feedback glyphicon-remove"
-		return false
 	}
 
 	ipui = ipui.substr(1)
@@ -44,9 +84,6 @@ function calculate(){
 	ipei = ipei + checksum(ipei);
 
 	document.getElementById("ipei").value = ipei
-
-	document.getElementById("ipui-group").className = "form-group has-success has-feedback"
-	document.getElementById("ipuiVal").className = "glyphicon form-control-feedback glyphicon-ok"
 
 	if (document.getElementById("verbose").checked) {
 		document.getElementById("verboseBox").className = "show";
